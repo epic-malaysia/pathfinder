@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Fraunces", Georgia, ui-serif, serif;
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    --journal-ink: #1F1B18;
+    --journal-paper: #FBF8F1;
+    --journal-ivory: #FFFDF9;
+    --journal-orange: #ff821e;
+    --journal-orange-ink: #B84D00;
+    --journal-sticky: #FEF3C7;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-padding-top: 72px;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Warm archival paper texture */
+.bg-journal-paper {
+  background-color: #FBF8F1;
+  background-image: radial-gradient(rgba(31, 27, 24, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Lined field-notebook paper rules */
+.bg-notebook-lines {
+  background-color: #FFFDF9;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 31px,
+    rgba(31, 27, 24, 0.085) 31px,
+    rgba(31, 27, 24, 0.085) 32px
+  );
+}
+
+/* Tactile translucent masking tape */
+.masking-tape {
+  background-color: rgba(244, 232, 193, 0.88);
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.22) 0px,
+    rgba(255, 255, 255, 0.22) 2px,
+    transparent 2px,
+    transparent 5px
+  );
+  box-shadow: 0 2px 6px rgba(31, 27, 24, 0.12);
+  backdrop-filter: blur(1px);
+}
+
+/* Subtle warm photographic film-grain overlay */
+.film-grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* One-page A4 portrait print layout */
+@page {
+  size: A4 portrait;
+  margin: 10mm 11mm;
+}
+
+@media print {
+  html,
+  body {
+    width: 100%;
+    background: #ffffff !important;
+    color: #1F1B18 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bg-journal-paper {
+    background-color: #ffffff !important;
+    background-image: none !important;
+  }
+
+  .bg-notebook-lines {
+    background-color: #FFFDF9 !important;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 19px,
+      rgba(31, 27, 24, 0.08) 19px,
+      rgba(31, 27, 24, 0.08) 20px
+    ) !important;
+  }
+
+  .film-grain-overlay {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  section,
+  figure,
+  aside,
+  footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

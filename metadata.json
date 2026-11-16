@@ -1,0 +1,8 @@
+{
+  "name": "Remix EPIC Pathfinder — Tanah Abang Mission",
+  "description": "Community volunteering landing page for EPIC\u0027s Pathfinder Training Workshop and Kampung Orang Asli Tanah Abang mission in Mersing, Johor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
