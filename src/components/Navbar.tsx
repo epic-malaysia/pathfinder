@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { withBase } from '../utils/assetPath';
 
 const NAV_LINKS = [
   { label: 'Mission', href: '#mission' },
@@ -37,7 +38,7 @@ export function Navbar() {
         >
           {!logoError ? (
             <img
-              src="/assets/aistudio/Epic_Logo_4df8a1b2.png"
+              src={withBase('/assets/aistudio/Epic_Logo_4df8a1b2.png')}
               alt="EPIC"
               referrerPolicy="no-referrer"
               onError={() => setLogoError(true)}

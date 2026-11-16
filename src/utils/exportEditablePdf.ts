@@ -1,4 +1,5 @@
 import { jsPDF } from 'jspdf';
+import { withBase } from './assetPath';
 
 const PAGE_W = 1200;
 const MARGIN_X = 48;
@@ -23,9 +24,9 @@ const URL_MAPS = 'https://maps.app.goo.gl/cc2UgZ9RWF1fihsKA';
 const URL_FB = 'https://www.facebook.com/theepichomes';
 const URL_IG = 'https://www.instagram.com/the.epichomes/';
 
-const HERO_IMAGE_PATH = '/src/assets/images/regenerated_image_1794845523601.png';
-const PATHFINDER_IMAGE_PATH = '/src/assets/images/regenerated_image_1794847870140.png';
-const LOGO_IMAGE_PATH = '/assets/aistudio/Epic_Logo_4df8a1b2.png';
+const HERO_IMAGE_PATH = withBase('/src/assets/images/regenerated_image_1794845523601.png');
+const PATHFINDER_IMAGE_PATH = withBase('/src/assets/images/regenerated_image_1794847870140.png');
+const LOGO_IMAGE_PATH = withBase('/assets/aistudio/Epic_Logo_4df8a1b2.png');
 
 interface LoadedImage {
   dataUrl: string;

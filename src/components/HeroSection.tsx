@@ -1,10 +1,11 @@
 import { ArrowUpRight, Compass } from 'lucide-react';
 import { useState } from 'react';
+import { withBase } from '../utils/assetPath';
 import { TealUnderline } from './TealUnderline';
 
 const SEDUNIA_URL =
   'https://www.sedunia.me/missions/mapping-kampung-orang-asli-tanah-abang-mersing-johor';
-const VILLAGE_IMAGE_PATH = '/src/assets/images/regenerated_image_1794845523601.png';
+const VILLAGE_IMAGE_PATH = withBase('/src/assets/images/regenerated_image_1794845523601.png');
 
 const KEY_DETAILS = [
   { label: 'Mission Date', value: 'Sat, 12 December 2026' },

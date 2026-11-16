@@ -1,8 +1,9 @@
 import { Compass } from 'lucide-react';
 import { useState } from 'react';
+import { withBase } from '../utils/assetPath';
 import { TealUnderline } from './TealUnderline';
 
-const PATHFINDER_PHOTO_PATH = '/src/assets/images/regenerated_image_1794847870140.png';
+const PATHFINDER_PHOTO_PATH = withBase('/src/assets/images/regenerated_image_1794847870140.png');
 
 export function PathfinderSection() {
   const [imgError, setImgError] = useState(false);
